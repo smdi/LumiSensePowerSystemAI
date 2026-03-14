@@ -1,0 +1,56 @@
+
+
+
+
+
+
+
+-- DROP TABLE LUMISENSE_DB.LUMISENSE_SCHEMA.optimization_log;
+
+
+SELECT * FROM LUMISENSE_DB.LUMISENSE_SCHEMA.OPTIMIZATION_LOG
+ORDER BY TIMESTAMP DESC;
+
+
+
+-- DROP TABLE LUMISENSE_DB.LUMISENSE_SCHEMA.INSIGHTS_LOG;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

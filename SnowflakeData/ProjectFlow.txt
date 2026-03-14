@@ -1,0 +1,33 @@
+
+
+
+
+Two way communication
+
+Snowflake - Snowflake tables, Snowflake CoCo
+Python Bridge - To connect micro controller with Snowflake
+IoT - Microcontroller, Iot Sensor(LDR), LEDs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
