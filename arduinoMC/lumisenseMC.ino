@@ -1,18 +1,26 @@
-int ldrPin    = A0;
-int ledPin    = 6;
-int ldrValue  = 0;
+int ldrPin     = A0;
+int ledPin     = 6;
+int ldrValue   = 0;
 int brightness = 0;
 
-// ── DEBUG MODE ──────────────────────────
+// ── DEVICE IDENTITY ─────────────────────────────
+const String LIGHT_ID = "L1";
+// ─────────────────────────────────────────────────
+
+// ── DEBUG MODE ──────────────────────────────────
 // true  = send every 15 seconds (testing)
 // false = send every 90 seconds (production)
 bool DEBUG_MODE = true;
-// ────────────────────────────────────────
+// ─────────────────────────────────────────────────
 
 void setup() {
   pinMode(ledPin, OUTPUT);
   Serial.begin(9600);
   delay(1000);
+
+  // Send identity first so Python knows which light this is
+  Serial.println("ID:" + LIGHT_ID);
+
   if (DEBUG_MODE) {
     Serial.println("DEBUG:ON");
   }
@@ -20,7 +28,9 @@ void setup() {
 
 void loop() {
   ldrValue = analogRead(ldrPin);
-  Serial.println(ldrValue);
+
+  // Send as "L1:450" so Python parses light_id + ldr_value together
+  Serial.println(LIGHT_ID + ":" + String(ldrValue));
 
   if (Serial.available() > 0) {
     String command = Serial.readStringUntil('\n');
