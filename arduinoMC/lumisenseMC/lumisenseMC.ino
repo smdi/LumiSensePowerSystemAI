@@ -4,7 +4,7 @@ int ldrValue   = 0;
 int brightness = 0;
 
 // ── DEVICE IDENTITY ─────────────────────────────
-const String LIGHT_ID = "L1";
+const String LIGHT_ID = "ALL";
 // ─────────────────────────────────────────────────
 
 // ── DEBUG MODE ──────────────────────────────────
@@ -29,7 +29,7 @@ void setup() {
 void loop() {
   ldrValue = analogRead(ldrPin);
 
-  // Send as "L1:450" so Python parses light_id + ldr_value together
+  // Send to python bridge
   Serial.println(LIGHT_ID + ":" + String(ldrValue));
 
   if (Serial.available() > 0) {
