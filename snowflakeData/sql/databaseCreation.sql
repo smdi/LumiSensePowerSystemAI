@@ -47,7 +47,15 @@ CREATE OR REPLACE TABLE LUMISENSE_DB.LUMISENSE_SCHEMA.LDR_LED_OPTIMIZATION_LOG (
 );
 
 
-
+-- ── TABLE 4: Sensor health log table
+CREATE OR REPLACE TABLE LUMISENSE_DB.LUMISENSE_SCHEMA.SENSOR_HEALTH_LOG (
+    timestamp   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    light_id    STRING,
+    fault_type  STRING,    -- DEAD / FROZEN / NOISY / SILENT / WRONG_PATTERN
+    severity    STRING,    -- CRITICAL / WARNING / OK
+    reason      STRING,
+    action      STRING     -- what to physically check
+);
 
 
 
